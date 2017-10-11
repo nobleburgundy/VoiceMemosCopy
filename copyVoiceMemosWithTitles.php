@@ -33,7 +33,9 @@ function run() {
 }
 
 function getOriginalFileNameArray() {
-    $xml          = simplexml_load_file('/Users/z001ll6/Desktop/Library.xml');
+    $parameters     = getInputParams();
+    $xmlFilePath    = $parameters['xml'];
+    $xml          = simplexml_load_file($xmlFilePath);
     $json         = json_encode($xml);
     $titles       = getJsonValueArrayByKey($json, 'string');
     $oldFileArray = [];
@@ -53,7 +55,8 @@ function getOriginalFileNameArray() {
 }
 
 function getNewFileArray() {
-    $newDestination = "/Users/z001ll6/Documents/m-projects/audio/voice_memo_copy/";
+    $parameters     = getInputParams();
+    $newDestination = $parameters['destination'];
     $files          = glob("$newDestination*");
     $newFileArray   = [];
     foreach ($files as $file) {
@@ -72,7 +75,8 @@ function countFiles($dir, $extension = '*') {
 function verifyCopy() {
     $oldFileArray   = getOriginalFileNameArray();
     $oldFileCount   = count($oldFileArray);
-    $newDestination = "/Users/z001ll6/Documents/m-projects/audio/voice_memo_copy/";
+    $parameters     = getInputParams();
+    $newDestination = $parameters['destination'];
     $newFileCount   = countFiles($newDestination, '*m4a');
 
     $newFileArray = getNewFileArray();
