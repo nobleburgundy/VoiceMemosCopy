@@ -6,7 +6,7 @@ Copys iPhone VoiceMemos post iTunes sync to desitnation folder with titles!!! Re
 + Need to have VoiceMemos syncd via iTunes (or other) to computer.
 + From iTunes, Export Library.xml file that contains data on files. 
 
-!!! I've only used this on my own system that doesn't have other music, so you will want to modify the script to work for your system and setup.  Will copy all .m4a files to new directory as is.
+!!! **WARNING** I've only used this on my own system that doesn't have other music, so you will want to modify the script to work for your system and setup.  Will copy all .m4a files to new directory as is.
 
 ## Steps
 1. Download php file.
